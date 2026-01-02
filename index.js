@@ -12,30 +12,31 @@ import {tweetsData} from '/data.js'
 console.log(tweetsData)
 
 function getFeedHtml(){
+   
     let feedHtml = ``
-    for (const tweet of tweetsData) {
+    tweetsData.forEach(function(tweet){
         feedHtml += `
-        <div class="tweet">
-            <div class="tweet-inner">
-                <img src="${tweet.profilePic}" class="profile-pic">
-                <div>
-                    <p class="handle">${tweet.handle}</p>
-                    <p class="tweet-text">${tweet.tweetText}</p>
-                    <div class="tweet-details">
-                        <span class="tweet-detail">
-                            ${tweet.replies.length}
-                        </span>
-                        <span class="tweet-detail">
-                            ${tweet.likes}
-                        </span>
-                        <span class="tweet-detail">
-                            ${tweet.retweets}
-                        </span>
-                    </div>   
-                </div>            
-            </div>
-        </div>`
-    }
-    
-    return feedHtml 
+<div class="tweet">
+    <div class="tweet-inner">
+        <img src="${tweet.profilePic}" class="profile-pic">
+        <div>
+            <p class="handle">${tweet.handle}</p>
+            <p class="tweet-text">${tweet.tweetText}</p>
+            <div class="tweet-details">
+                <span class="tweet-detail">
+                    ${tweet.replies.length}
+                </span>
+                <span class="tweet-detail">
+                    ${tweet.likes}
+                </span>
+                <span class="tweet-detail">
+                    ${tweet.retweets}
+                </span>
+            </div>   
+        </div>            
+    </div>
+</div>
+`
+   })
+   return feedHtml 
 }
