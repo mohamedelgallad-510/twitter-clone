@@ -22,6 +22,8 @@ function handleLikeClick(tweetId){
     const targetTweetObj = tweetsData[targetIndex]
     targetTweetObj.likes += 1
     console.log(targetTweetObj)
+
+    render()
 }
 
 function getFeedHtml(){
