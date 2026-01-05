@@ -78,6 +78,8 @@ function handleReplyClick(replyId){
     } else {
         selectedTweet.classList.add('hidden')
     }
+
+    // document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
 }
 
 function getFeedHtml(){
