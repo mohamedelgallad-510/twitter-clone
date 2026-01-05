@@ -11,6 +11,8 @@ document.addEventListener('click', function(e){
         handleLikeClick(e.target.dataset.like)     
     } else if (e.target.dataset.retweet) {
         handleRetweetClick(e.target.dataset.retweet)
+    } else if (e.target.dataset.reply) {
+        handleReplyClick(e.target.dataset.reply)
     }
 })
 
@@ -49,6 +51,33 @@ function handleRetweetClick(tweetId){
     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
     
     render()
+}
+
+function handleRetweetClick(tweetId){
+    const targetTweetObj = tweetsData.filter(function(tweet){
+        return tweet.uuid === tweetId
+    })[0]
+    
+    if(targetTweetObj.isRetweeted){
+        targetTweetObj.retweets--
+    }
+    else{
+        targetTweetObj.retweets++
+    }
+    targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+    render() 
+}
+
+function handleReplyClick(replyId){
+    
+    const idName = `replies-${replyId}`
+    const selectedTweet = document.getElementById(idName)
+    
+    if(selectedTweet.classList.contains('hidden')) {
+        selectedTweet.classList.remove('hidden')
+    } else {
+        selectedTweet.classList.add('hidden')
+    }
 }
 
 function getFeedHtml(){
