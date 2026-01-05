@@ -50,7 +50,7 @@ function handleRetweetClick(tweetId){
     render()
 }
 
-function handleRetweetClick(tweetId){
+/* function handleRetweetClick(tweetId){
     const targetTweetObj = tweetsData.filter(function(tweet){
         return tweet.uuid === tweetId
     })[0]
@@ -63,7 +63,7 @@ function handleRetweetClick(tweetId){
     }
     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
     render() 
-}
+} */
 
 function handleReplyClick(replyId){
     
