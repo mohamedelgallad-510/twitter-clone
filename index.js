@@ -53,8 +53,15 @@ function handleRetweetClick(tweetId){
 
 function getFeedHtml(){
     let feedHtml = ``
+
+    let likeIconClass = ''
     
     tweetsData.forEach(function(tweet){
+
+        if (tweet.isLiked) {
+            likeIconClass = 'liked'
+        }
+
         feedHtml += `
 <div class="tweet">
     <div class="tweet-inner">
@@ -70,7 +77,7 @@ function getFeedHtml(){
                     ${tweet.replies.length}
                 </span>
                 <span class="tweet-detail">
-                    <i class="fa-solid fa-heart"
+                    <i class="fa-solid fa-heart ${likeIconClass}"
                     data-like="${tweet.uuid}"
                     ></i>
                     ${tweet.likes}
