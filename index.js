@@ -85,11 +85,11 @@ function handleTweetBtnClick(){
 
 function getFeedHtml(){
     let feedHtml = ``
-
-    let likeIconClass = ''
-    let retweetIconClass = ''
     
     tweetsData.forEach(function(tweet){
+
+        let likeIconClass = ''
+        let retweetIconClass = ''
 
         if (tweet.isLiked) {
             likeIconClass = 'liked'
