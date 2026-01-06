@@ -8,7 +8,7 @@ export const tweetsData = [
             Guaranteed return on investment. HMU DMs open!!`,
         replies: [],
         isLiked: false,
-        isRetweeted: false,
+        isRetweeted: true,
         uuid: '4b161eee-c0f5-4545-9c4b-8562944223ee',
     },    
     {
