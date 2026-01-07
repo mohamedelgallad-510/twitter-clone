@@ -14,6 +14,7 @@ document.addEventListener('click', function(e){
     } else if (e.target.dataset.tweet){
         handleTweetBtnClick()
     }
+    // else if (e.target.id === "") {}
 })
 
 function handleLikeClick(tweetId){
