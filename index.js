@@ -96,9 +96,9 @@ function handleTweetBtnClick(){
             isRetweeted: false,
             uuid: uuidv4()
         })
+        render()
+        tweetInput.value = ""
     }
-    render()
-    tweetInput.value = ""
 }
 
 function getFeedHtml(){
